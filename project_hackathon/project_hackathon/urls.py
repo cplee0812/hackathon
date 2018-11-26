@@ -25,5 +25,5 @@ urlpatterns = [
     path('gamepage', views.gamepage),
     path('teampage', views.teampage),
     path('personalpage', views.personalpage),
-
+    path('create', views.create)
 ]
