@@ -13,11 +13,39 @@ def homepage(request):
 
 def register(request):
 
+	if request.method == 'POST':
+		form = UserCreationForm(request.POST)
+		if form.is_valid():
+			user = form.save()
+#			_login(request,username,password)
+			return redirect('/login')
+	else:
+		form = UserCreationForm()
+		message = '尚未註冊成功！'
 	return render(request, 'register.html',locals())
 
 def login(request):
 
-	return render(request, 'login.html',locals())
+	if request.user.is_authenticated: 
+		return redirect('/')
+
+	username = request.POST.get('username', '')
+	password = request.POST.get('password', '')
+
+	user = auth.authenticate(username=username, password=password)
+
+	if user is not None and user.is_active:
+		auth.login(request, user)
+		message = '登入成功！'
+		return redirect('/')
+	else:
+		message = '尚未登入成功！'
+		return render(request, 'login.html', locals())
+
+def logout(request):
+
+	auth.logout(request)
+	return redirect('/')
 
 def gamepage(request):
 
