@@ -101,6 +101,7 @@
 							</li>
 							<li><a href="contact.html">Contact</a></li>
 							{% if request.user.is_authenticated %}
+								<li class="btn-cta"><a href="/logout"><span>Logout</span></a></li>
 							{% else %}
 								<li class="btn-cta"><a href="/login"><span>Login</span></a></li>
 								<li class="btn-cta"><a href="/register"><span>Register</span></a></li>
