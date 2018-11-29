@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
+from football import views as fb_views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,5 +28,7 @@ urlpatterns = [
     path('gamepage', views.gamepage),
     path('teampage', views.teampage),
     path('personalpage', views.personalpage),
-    path('create', views.create)
+    path('create', views.create),
+    path('football_page',fb_views.mainpage),
+    path('fb_gamepage', fb_views.gamepage),
 ]
