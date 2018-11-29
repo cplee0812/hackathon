@@ -123,7 +123,7 @@ STATIC_URL = '/static/'
 
 django_heroku.settings(locals())
 
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
+#STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
