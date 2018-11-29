@@ -5,7 +5,7 @@
 {% load static %}
 
 <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
-    
+
 <!-- Animate.css -->
 <link rel="stylesheet" href="{% static 'css/animate.css' %}">
 <!-- Icomoon Icon Fonts-->
@@ -22,27 +22,27 @@
 
 <head>
 
-<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url({% static 'images/img_bg_1.jpg' %});" 
-data-stellar-background-ratio="0.5">
+    <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url({% static 'images/img_bg_1.jpg' %});" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
                     <div class="display-t">
                         <div class="display-tc animate-box" data-animate-effect="fadeIn">
+
                             <body>
                                 <p1>GAME #{{000001}}</p1>
-                            
-                                <table style="width:50%">
+
+                                <table style="padding:20px">
                                     <tr>
-                                        <td id="td">{{A1}}</td>
+                                        <td id="td">{{A1}}台灣</td>
                                         <th id="th">TEAM</th>
-                                        <td id="td">{{B1}}</td>
+                                        <td id="td">{{B1}}中華台北</td>
                                     </tr>
                                     <tr>
-                                        <td id="td">{{A2}}</td>
+                                        <td id="td">{{A2}}4,763,086</td>
                                         <th id="th">得分</th>
-                                        <td id="td">{{B2}}</td>
+                                        <td id="td">{{B2}}5,774,556</td>
                                     </tr>
                                     <tr>
                                         <td id="td">{{A3}}</td>
@@ -70,118 +70,129 @@ data-stellar-background-ratio="0.5">
                                         <td id="td">{{B7}}</td>
                                     </tr>
                                 </table>
-                            
-                                <div>
-                                    <table style="float:left">
-                                        <div>
+
+                                <div style="padding:20px">
+                                    <div style="float:left">
+                                        <table>
                                             <div>
-                                                <p1>TEAM_A</p1>
-                                                <thead>
-                                                    <tr>
-                                                        <th>守門員</th>
-                                                        <th>進球</th>
-                                                        <th>失球</th>
-                                                        <th>救球</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th><span>{{背號}}</span>{{NAME}}</th>
-                                                        <td>{{進球數}}</td>
-                                                        <td>{{失球數}}</td>
-                                                        <td>{{救球數}}</td>
-                                                    </tr>
-                                                </tbody>
+                                                <div>
+                                                    <p1>TEAM_A</p1>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>守門員</th>
+                                                            <th>進球</th>
+                                                            <th>失球</th>
+                                                            <th>救球</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th><span>{{背號}}</span>{{NAME}}</th>
+                                                            <td>{{進球數}}</td>
+                                                            <td>{{失球數}}</td>
+                                                            <td>{{救球數}}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </div>
+                                                <div>
+                                                    <!--等有能力再細分成前鋒中鋒後衛替補那些吧-->
+                                                    <thead>
+                                                        <tr>
+                                                            <th>球員</th>
+                                                            <th>進球</th>
+                                                            <th>助攻</th>
+                                                            <th>射門</th>
+                                                            <th>犯規</th>
+                                                            <th>被犯規</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- {% for player_stat in  %-->
+                                                    <tbody>
+                                                        <tr>
+                                                            <th><span>{{背號}}</span>{{NAME}}</th>
+                                                            <td>{{進球數}}</td>
+                                                            <td>{{助攻數}}</td>
+                                                            <td>{{射門數}}</td>
+                                                            <td>{{犯規數}}</td>
+                                                            <td>{{被犯規數}}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </div>
                                             </div>
+
+                                        </table>
+                                    </div>
+
+                                    <div style="float:left">
+                                        <table>
                                             <div>
-                                                <!--等有能力再細分成前鋒中鋒後衛替補那些吧-->
-                                                <thead>
-                                                    <tr>
-                                                        <th>球員</th>
-                                                        <th>進球</th>
-                                                        <th>助攻</th>
-                                                        <th>射門</th>
-                                                        <th>犯規</th>
-                                                        <th>被犯規</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th><span>{{背號}}</span>{{NAME}}</th>
-                                                        <td>{{進球數}}</td>
-                                                        <td>{{助攻數}}</td>
-                                                        <th>{{射門數}}</th>
-                                                        <th>{{犯規數}}</th>
-                                                        <th>{{被犯規數}}</th>
-                                                    </tr>
-                                                </tbody>
+                                                <div>
+                                                    <p1>TEAM_B</p1>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>守門員</th>
+                                                            <th>進球</th>
+                                                            <th>失球</th>
+                                                            <th>救球</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th><span>{{背號}}</span>{{NAME}}</th>
+                                                            <td>{{進球數}}</td>
+                                                            <td>{{失球數}}</td>
+                                                            <td>{{救球數}}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </div>
+                                                <div>
+                                                    <!--等有能力再細分成前鋒中鋒後衛替補那些吧-->
+                                                    <thead>
+                                                        <tr>
+                                                            <th>球員</th>
+                                                            <th>進球</th>
+                                                            <th>助攻</th>
+                                                            <th>射門</th>
+                                                            <th>犯規</th>
+                                                            <th>被犯規</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th><span>{{背號}}</span>{{NAME}}</th>
+                                                            <td>{{進球數}}</td>
+                                                            <td>{{助攻數}}</td>
+                                                            <td>{{射門數}}</td>
+                                                            <td>{{犯規數}}</td>
+                                                            <td>{{被犯規數}}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </div>
                                             </div>
-                                        </div>
-                            
-                                    </table>
+
+                                        </table>
+                                    </div>
                                 </div>
-                            
+                                <br><br><br><br>
+
                                 <div>
-                                    <table style="float:left">
-                                        <div>
-                                            <div>
-                                                <p2>TEAM_B</p2>
-                                                <thead>
-                                                    <tr>
-                                                        <th>守門員</th>
-                                                        <th>進球</th>
-                                                        <th>失球</th>
-                                                        <th>救球</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th><span>{{背號}}</span>{{NAME}}</th>
-                                                        <td>{{進球數}}</td>
-                                                        <td>{{失球數}}</td>
-                                                        <td>{{救球數}}</td>
-                                                    </tr>
-                                                </tbody>
-                                            </div>
-                                            <div>
-                                                <!--等有能力再細分成前鋒中鋒後衛替補那些吧-->
-                                                <thead>
-                                                    <tr>
-                                                        <th>球員</th>
-                                                        <th>進球</th>
-                                                        <th>助攻</th>
-                                                        <th>射門</th>
-                                                        <th>犯規</th>
-                                                        <th>被犯規</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th><span>{{背號}}</span>{{NAME}}</th>
-                                                        <td>{{進球數}}</td>
-                                                        <td>{{助攻數}}</td>
-                                                        <th>{{射門數}}</th>
-                                                        <th>{{犯規數}}</th>
-                                                        <th>{{被犯規數}}</th>
-                                                    </tr>
-                                                </tbody>
-                                            </div>
+                                    <p style="font-size: 150%">Broadcast</p>
+                                    <div style="border-style:solid;border-width:2px">
+                                        <div class='msg'>
+                                            <span class="time">{{ TIME 13:31 </span> Player A goal !!
                                         </div>
-                            
-                                    </table>
-                                </div>
-                            
-                            
-                            
-                            
+                                        <div class='msg'>
+                                            <span class="time">{{ TIME 13:31 </span> Player A goal !!
+                                        </div>
+                                    </div>
+
                             </body>
-                            
-                            </救球數}}
+
+                            </救球數}} </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
     </header>
 
     </div>
