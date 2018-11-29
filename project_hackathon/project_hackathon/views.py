@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from django.template import loader
+from django.conf.urls.static import static
 
 def homepage(request):
 
