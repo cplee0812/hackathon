@@ -120,12 +120,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-<<<<<<< HEAD
+#<<<<<<< HEAD
 
 django_heroku.settings(locals())
-=======
+#=======
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
->>>>>>> a118dc05ddc7817a60e5bcb215c0f851c7152070
+#>>>>>>> a118dc05ddc7817a60e5bcb215c0f851c7152070
