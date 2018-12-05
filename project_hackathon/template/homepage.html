@@ -83,7 +83,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-2">
-						<div id="fh5co-logo"><a href="index.html">Run<span>.</span></a></div>
+						<div id="fh5co-logo"><a href="http://csx.ntu.edu.tw/">NTU/<span>/CS+X</span></a></div>
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
@@ -114,7 +114,7 @@
 		</div>
 	</nav>
 
-	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url({% static 'images/img_bg_1.jpg' %});" data-stellar-background-ratio="0.5">
+	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url({% static 'images/img_bg_1.jpg' %});" data-stellar-background-ratio="0.5"> <!--data-stellar-background-ratio:控制滾動頁面時背景圖片跟著移動的速率-->
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -122,9 +122,10 @@
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
 							<h1><strong>運動聯賽整合系統</strong><br>"Winning isn't everything,<br> but wanting to win is."</h1>
-							<p><a href="https://docs.google.com/presentation/d/1kZc_XiGCaPDPsliuG136vD1yPH1O19g7b1LWN7kMndE/edit?fbclid=IwAR31L7pUsEHOmiQpQIjeNSdtycEiAOzjWnRJi57zjqn-peEvzCwYkTjc9p0#slide=id.g48659493f8_0_222" class="btn btn-primary btn-lg with-arrow">View Our Work</a></p>
+							<p><a href="https://docs.google.com/presentation/d/1kZc_XiGCaPDPsliuG136vD1yPH1O19g7b1LWN7kMndE/edit?fbclid=IwAR31L7pUsEHOmiQpQIjeNSdtycEiAOzjWnRJi57zjqn-peEvzCwYkTjc9p0#slide=id.g48659493f8_0_222" class="btn btn-primary btn-lg with-arrow">查看比賽資訊</a></p>
 							{% if request.user.is_authenticated %}
-								<p><a href="/create" class="btn btn-primary btn-lg with-arrow">Creat a Game</a></p>
+								<p><a href="/create" class="btn btn-primary btn-lg with-arrow">舉辦比賽</a></p>
+								<p><a href="#" class="btn btn-primary btn-lg with-arrow">參加比賽</a></p>
 							{% endif %}
 						</div>
 					</div>
@@ -195,7 +196,7 @@
 			<div class="col-forth">
 				<div class="project animate-box" style="background-image:url({% static 'images/project-8.jpg' %});">
 					<a href="football_page/" class="desc">
-						<span>Game</span>
+						<span>足球</span>
 						<h3>Football</h3>
 					</a>
 				</div>
@@ -203,7 +204,7 @@
 			<div class="col-forth">
 				<div class="project animate-box" style="background-image:url({% static 'images/project-1.jpg' %});">
 					<a href="#" class="desc">
-						<span>Game</span>
+						<span>籃球</span>
 						<h3>Basketball</h3>
 					</a>
 				</div>
@@ -211,7 +212,7 @@
 			<div class="col-forth">
 				<div class="project animate-box" style="background-image:url({% static 'images/project-2.jpg' %});">
 					<a href="#" class="desc">
-						<span>Game</span>
+						<span>排球</span>
 						<h3>Volleyball</h3>
 					</a>
 				</div>
@@ -219,7 +220,7 @@
 			<div class="col-forth">
 				<div class="project animate-box" style="background-image:url({% static 'images/project-3.jpg' %});">
 					<a href="#" class="desc">
-						<span>Game</span>
+						<span>羽毛球</span>
 						<h3>Badminton</h3>
 					</a>
 				</div>
@@ -267,6 +268,17 @@
 									<span>林宇晨<a href="#" class="twitter"></a></span>
 									<blockquote>
 										<p>&ldquo;巨人之所以偉大，是因為他與別人共處逆境時，別人失去了信念，他卻下決心實現自己的目的。 &rdquo;</p>
+									</blockquote>
+								</div>
+							</div>
+							<div class="item">
+								<div class="testimony-slide active text-center">
+									<figure>
+										<img src="{% static 'images/person_4.jpg' %}" alt="user">
+									</figure>
+									<span>晏陽<a href="#" class="twitter"></a></span>
+									<blockquote>
+										<p>&ldquo;今天不努力工作，明天就要努力找工作。&rdquo;</p>
 									</blockquote>
 								</div>
 							</div>
