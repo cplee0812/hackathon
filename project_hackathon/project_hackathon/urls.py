@@ -31,6 +31,10 @@ urlpatterns = [
     path('create/', views.create),
     path('football_page/',fb_views.mainpage),
     path('fb_gamepage/', fb_views.gamepage),
+<<<<<<< HEAD
     path('basketball_page/', views.basketball_mainpage),
     path('basketball_page/basketball_gamepage/', views.basketball_gamepage)
+=======
+    path('feedback/',views.feedback),
+>>>>>>> c5bfe78a2719b62ae33615e42456f33d8ac75df8
 ]

@@ -27,7 +27,7 @@ def register(request):
 
 def login(request):
 
-	if request.user.is_authenticated: 
+	if request.user.is_authenticated:
 		return redirect('/')
 
 	username = request.POST.get('username', '')
@@ -83,6 +83,7 @@ def create(request):
 	context = {"dates" : date, "members" : member, "positions" : position}
 	return HttpResponse(template.render(context, request))
 
+<<<<<<< HEAD
 def basketball_gamepage(request):
 	template = loader.get_template('basketball_gamepage.html')
 	player1 = ["John       ", "後衛", 15, 5, 2, 2]
@@ -101,3 +102,8 @@ def basketball_gamepage(request):
 
 def basketball_mainpage(request):
 	return render(request, 'basketball_mainpage.html',locals())
+=======
+def feedback(request):
+
+	return render(request, 'feedback.html', locals())
+>>>>>>> c5bfe78a2719b62ae33615e42456f33d8ac75df8
