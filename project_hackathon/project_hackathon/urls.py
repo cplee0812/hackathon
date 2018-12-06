@@ -32,4 +32,6 @@ urlpatterns = [
     path('football_page/',fb_views.mainpage),
     path('fb_gamepage/', fb_views.gamepage),
     path('feedback/',views.feedback),
+    path('volleyball_gamepage/',views.volleyball_gamepage),
+    path('volleyball_mainpage/',views.volleyball_mainpage),
 ]

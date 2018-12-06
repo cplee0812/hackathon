@@ -86,3 +86,11 @@ def create(request):
 def feedback(request):
 
 	return render(request, 'feedback.html', locals())
+
+def volleyball_gamepage(request):
+
+	return render(request, 'volleyball_gamepage.html', locals())
+
+def volleyball_mainpage(request):
+
+	return render(request, 'volleyball_mainpage.html', locals())
