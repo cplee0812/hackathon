@@ -31,4 +31,5 @@ urlpatterns = [
     path('create/', views.create),
     path('football_page/',fb_views.mainpage),
     path('fb_gamepage/', fb_views.gamepage),
+    path('feedback/',views.feedback),
 ]

@@ -27,7 +27,7 @@ def register(request):
 
 def login(request):
 
-	if request.user.is_authenticated: 
+	if request.user.is_authenticated:
 		return redirect('/')
 
 	username = request.POST.get('username', '')
@@ -82,3 +82,7 @@ def create(request):
 		member.append(i + 1)
 	context = {"dates" : date, "members" : member, "positions" : position}
 	return HttpResponse(template.render(context, request))
+
+def feedback(request):
+
+	return render(request, 'feedback.html', locals())
