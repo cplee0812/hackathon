@@ -27,7 +27,7 @@ def register(request):
 
 def login(request):
 
-	if request.user.is_authenticated: 
+	if request.user.is_authenticated:
 		return redirect('/')
 
 	username = request.POST.get('username', '')
@@ -82,3 +82,32 @@ def create(request):
 		member.append(i + 1)
 	context = {"dates" : date, "members" : member, "positions" : position}
 	return HttpResponse(template.render(context, request))
+
+def basketball_gamepage(request):
+	template = loader.get_template('basketball_gamepage.html')
+	player1 = ["John       ", "後衛", 15, 5, 2, 2]
+	player2 = ["Clinton    ", "後衛", 20, 7, 3, 0]
+	player3 = ["Shawn      ", "中鋒", 18, 3, 1, 0]
+	player4 = ["Yang       ", "前鋒", 25, 4, 0, 1]
+	player5 = ["Kevin      ", "前鋒", 20, 1, 2, 3]
+	player6 = ["Howard     ", "後衛", 13, 7, 2, 2]
+	player7 = ["Jacky      ", "後衛", 17, 6, 1, 1]
+	player8 = ["Henry      ", "中鋒", 25, 3, 1, 1]
+	player9 = ["Bob        ", "中鋒", 24, 3, 3, 2]
+	player10 = ["Simith    ", "前鋒", 31, 2, 0, 3]
+	information = {"player1" : player1, "player2" : player2, "player3" : player3, "player4" : player4, "player5" : player5, 
+				   "player6" : player6, "player7" : player7, "player8" : player8, "player9" : player9, "player10" : player10}
+	return HttpResponse(template.render(information, request))
+
+def basketball_mainpage(request):
+	return render(request, 'basketball_mainpage.html',locals())
+def feedback(request):
+	return render(request, 'feedback.html', locals())
+
+def volleyball_gamepage(request):
+
+	return render(request, 'volleyball_gamepage.html', locals())
+
+def volleyball_mainpage(request):
+
+	return render(request, 'volleyball_mainpage.html', locals())
