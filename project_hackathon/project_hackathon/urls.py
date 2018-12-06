@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from . import views
 from football import views as fb_views
 
@@ -33,7 +33,9 @@ urlpatterns = [
     path('fb_gamepage/', fb_views.gamepage),
     path('basketball_page/', views.basketball_mainpage),
     path('basketball_gamepage/', views.basketball_gamepage),
-    path('feedback/',views.feedback),
     path('volleyball_gamepage/',views.volleyball_gamepage),
     path('volleyball_mainpage/',views.volleyball_mainpage),
+    path('', include('sendemail.urls')),
+    path('email/',views.email),
+    path('success/',views.email),
 ]

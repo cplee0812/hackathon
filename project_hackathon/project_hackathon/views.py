@@ -95,14 +95,14 @@ def basketball_gamepage(request):
 	player8 = ["Henry      ", "中鋒", 25, 3, 1, 1]
 	player9 = ["Bob        ", "中鋒", 24, 3, 3, 2]
 	player10 = ["Simith    ", "前鋒", 31, 2, 0, 3]
-	information = {"player1" : player1, "player2" : player2, "player3" : player3, "player4" : player4, "player5" : player5, 
+	information = {"player1" : player1, "player2" : player2, "player3" : player3, "player4" : player4, "player5" : player5,
 				   "player6" : player6, "player7" : player7, "player8" : player8, "player9" : player9, "player10" : player10}
 	return HttpResponse(template.render(information, request))
 
 def basketball_mainpage(request):
 	return render(request, 'basketball_mainpage.html',locals())
-def feedback(request):
-	return render(request, 'feedback.html', locals())
+def email(request):
+	return render(request, 'email.html', locals())
 
 def volleyball_gamepage(request):
 
