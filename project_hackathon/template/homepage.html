@@ -1,16 +1,16 @@
-<!DOCTYPE HTML>
-{% load static %}
+<!DOCTYPE HTML> {% load static %}
 <html>
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Run &mdash; Free Website Template, Free HTML5 Template by freehtml5.co</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
-	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="freehtml5.co" />
 
-	<!--
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Run &mdash; Free Website Template, Free HTML5 Template by freehtml5.co</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
+    <meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+    <meta name="author" content="freehtml5.co" />
+
+    <!--
 	//////////////////////////////////////////////////////
 
 	FREE HTML5 TEMPLATE
@@ -24,366 +24,369 @@
 	//////////////////////////////////////////////////////
 	 -->
 
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
 
-	<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
 
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
 
-	<!-- Owl Carousel  -->
-	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
-	<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <!-- Owl Carousel  -->
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
 
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-	<!-- Modernizr JS -->
-	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
+    <!-- Modernizr JS -->
+    <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
-	</head>
-	<body>
+</head>
 
-	<div class="fh5co-loader"></div>
+<body>
 
-	<div id="page">
-	<nav class="fh5co-nav" role="navigation">
-		<div class="top">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 text-right">
-						<p class="num">Call: +01 123 456 7890</p>
-						<ul class="fh5co-social">
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
-							<li><a href="#"><i class="icon-github"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="top-menu">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-2">
-						<div id="fh5co-logo"><a href="http://csx.ntu.edu.tw/">NTU/<span>/CS+X</span></a></div>
-					</div>
-					<div class="col-xs-10 text-right menu-1">
-						<ul>
-							<!-- <li class="active"><a href="index.html">Home</a></li> -->
-							<li><a href="work.html">Work</a></li>
-							<li><a href="about.html">About</a></li>
-							<li class="has-dropdown">
-								<a href="services.html">Services</a>
-								<ul class="dropdown">
-									<li><a href="#">Web Design</a></li>
-									<li><a href="#">eCommerce</a></li>
-									<li><a href="#">Branding</a></li>
-									<li><a href="#">API</a></li>
-								</ul>
-							</li>
-							<li><a href="contact.html">Contact</a></li>
-							{% if request.user.is_authenticated %}
-								<li class="btn-cta"><a href="/logout"><span>Logout</span></a></li>
-							{% else %}
-								<li class="btn-cta"><a href="/login"><span>Login</span></a></li>
-								<li class="btn-cta"><a href="/register"><span>Register</span></a></li>
-							{% endif %}
-						</ul>
-					</div>
-				</div>
+    <div class="fh5co-loader"></div>
 
-			</div>
-		</div>
-	</nav>
+    <div id="page">
+        <nav class="fh5co-nav" role="navigation">
+            <div class="top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 text-right">
+                            <p class="num">Call: +01 123 456 7890</p>
+                            <ul class="fh5co-social">
+                                <li><a href="#"><i class="icon-twitter"></i></a></li>
+                                <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                                <li><a href="#"><i class="icon-github"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="top-menu">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <div id="fh5co-logo"><a href="http://csx.ntu.edu.tw/">NTU/<span>/CS+X</span></a></div>
+                        </div>
+                        <div class="col-xs-10 text-right menu-1">
+                            <ul>
+                                <!-- <li class="active"><a href="index.html">Home</a></li> -->
+                                <li><a href="work.html">Work</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li class="has-dropdown">
+                                    <a href="services.html">Services</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">Web Design</a></li>
+                                        <li><a href="#">eCommerce</a></li>
+                                        <li><a href="#">Branding</a></li>
+                                        <li><a href="#">API</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html">Contact</a></li>
+                                {% if request.user.is_authenticated %}
+                                <li class="btn-cta"><a href="/logout"><span>Logout</span></a></li>
+                                {% else %}
+                                <li class="btn-cta"><a href="/login"><span>Login</span></a></li>
+                                <li class="btn-cta"><a href="/register"><span>Register</span></a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
 
-	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url({% static 'images/img_bg_1.jpg' %});" data-stellar-background-ratio="0.5"> <!--data-stellar-background-ratio:控制滾動頁面時背景圖片跟著移動的速率-->
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6">
-					<div class="display-t">
-						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<h1><strong>運動聯賽整合系統</strong><br>"Winning isn't everything,<br> but wanting to win is."</h1>
-							<p><a href="https://docs.google.com/presentation/d/1kZc_XiGCaPDPsliuG136vD1yPH1O19g7b1LWN7kMndE/edit?fbclid=IwAR31L7pUsEHOmiQpQIjeNSdtycEiAOzjWnRJi57zjqn-peEvzCwYkTjc9p0#slide=id.g48659493f8_0_222" class="btn btn-primary btn-lg with-arrow">查看比賽資訊</a></p>
-							{% if request.user.is_authenticated %}
-								<p><a href="/create" class="btn btn-primary btn-lg with-arrow">舉辦比賽</a></p>
-								<p><a href="#" class="btn btn-primary btn-lg with-arrow">參加比賽</a></p>
-							{% endif %}
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
+                </div>
+            </div>
+        </nav>
 
-	<div id="fh5co-services" class="fh5co-bg-section">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>How it Works</h2>
-					<p>透過整合校內各項運動賽事之各種資訊，使得參賽者與主辦者皆能擁有更加方便快速之管道。.</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
-					<div class="iphone">
-						<img class="img-responsive" src="{% static 'images/iphone.png' %}" alt="iphone">
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="row services-inner">
-						<div class="col-md-12 col-sm-12">
-							<div class="feature-center animate-box" data-animate-effect="fadeIn">
-								<span class="icon">
+        <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url({% static 'images/img_bg_1.jpg' %});" data-stellar-background-ratio="0.5">
+            <!--data-stellar-background-ratio:控制滾動頁面時背景圖片跟著移動的速率-->
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="display-t">
+                            <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                                <h1><strong>運動聯賽整合系統</strong><br>"Winning isn't everything,<br> but wanting to win is."</h1>
+                                <p><a href="https://docs.google.com/presentation/d/1kZc_XiGCaPDPsliuG136vD1yPH1O19g7b1LWN7kMndE/edit?fbclid=IwAR31L7pUsEHOmiQpQIjeNSdtycEiAOzjWnRJi57zjqn-peEvzCwYkTjc9p0#slide=id.g48659493f8_0_222" class="btn btn-primary btn-lg with-arrow">查看比賽資訊</a></p>
+                                {% if request.user.is_authenticated %}
+                                <p><a href="/create" class="btn btn-primary btn-lg with-arrow">舉辦比賽</a></p>
+                                <p><a href="#" class="btn btn-primary btn-lg with-arrow">參加比賽</a></p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="fh5co-services" class="fh5co-bg-section">
+            <div class="container">
+                <div class="row animate-box">
+                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                        <h2>How it Works</h2>
+                        <p>透過整合校內各項運動賽事之各種資訊，使得參賽者與主辦者皆能擁有更加方便快速之管道。.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="iphone">
+                            <img class="img-responsive" src="{% static 'images/iphone.png' %}" alt="iphone">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row services-inner">
+                            <div class="col-md-12 col-sm-12">
+                                <div class="feature-center animate-box" data-animate-effect="fadeIn">
+                                    <span class="icon">
 									<i class="icon-image"></i>
 								</span>
-								<h3>影像紀錄</h3>
-								<p>與影像紀錄者合作，提供每場比賽之照片記錄供瀏覽者觀賞，供比賽選手下載。</p>
-							</div>
-						</div>
-						<div class="col-md-12 col-sm-12">
-							<div class="feature-center animate-box" data-animate-effect="fadeIn">
-								<span class="icon">
+                                    <h3>影像紀錄</h3>
+                                    <p>與影像紀錄者合作，提供每場比賽之照片記錄供瀏覽者觀賞，供比賽選手下載。</p>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12">
+                                <div class="feature-center animate-box" data-animate-effect="fadeIn">
+                                    <span class="icon">
 									<i class="icon-laptop"></i>
 								</span>
-								<h3>回饋系統</h3>
-								<p>提供回饋表單供使用者填寫，讓大家共同建立一個更為完善的系統。</p>
-							</div>
-						</div>
-						<div class="col-md-12 col-sm-12">
-							<div class="feature-center animate-box" data-animate-effect="fadeIn">
-								<span class="icon">
+                                    <h3>回饋系統</h3>
+                                    <p>提供回饋表單供使用者填寫，讓大家共同建立一個更為完善的系統。</p>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12">
+                                <div class="feature-center animate-box" data-animate-effect="fadeIn">
+                                    <span class="icon">
 									<i class="icon-air-play"></i>
 								</span>
-								<h3>即時狀況</h3>
-								<p>提供即時比賽進行與否、比賽即時比分、比賽場地、場上人員名單等即時性資訊。</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                                    <h3>即時狀況</h3>
+                                    <p>提供即時比賽進行與否、比賽即時比分、比賽場地、場上人員名單等即時性資訊。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-	<div id="fh5co-project">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>CATEGORY</h2>
-					<p>校內目前所擁有之球賽種類</p>
-				</div>
-			</div>
-		</div>
-		<div class="project-content">
-			<div class="col-forth">
-				<div class="project animate-box" style="background-image:url({% static 'images/project-8.jpg' %});">
-					<a href="football_page/" class="desc">
-						<span>足球</span>
-						<h3>Football</h3>
-					</a>
-				</div>
-			</div>
-			<div class="col-forth">
-				<div class="project animate-box" style="background-image:url({% static 'images/project-1.jpg' %});">
-					<a href="#" class="desc">
-						<span>籃球</span>
-						<h3>Basketball</h3>
-					</a>
-				</div>
-			</div>
-			<div class="col-forth">
-				<div class="project animate-box" style="background-image:url({% static 'images/project-2.jpg' %});">
-					<a href="#" class="desc">
-						<span>排球</span>
-						<h3>Volleyball</h3>
-					</a>
-				</div>
-			</div>
-			<div class="col-forth">
-				<div class="project animate-box" style="background-image:url({% static 'images/project-3.jpg' %});">
-					<a href="#" class="desc">
-						<span>羽毛球</span>
-						<h3>Badminton</h3>
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="fh5co-testimonial" class="fh5co-bg-section">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Developers</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1">
-					<div class="row animate-box">
-						<div class="owl-carousel owl-carousel-fullwidth">
-							<div class="item">
-								<div class="testimony-slide active text-center">
-									<figure>
-										<img src="{% static 'images/person_1.jpg' %}" alt="user">
-									</figure>
-									<span>柯宏穎<a href="#" class="twitter"></a></span>
-									<blockquote>
-										<p>&ldquo;勝利不是將來才有的，而是從抉擇去做的那一刻起，持續累積而成。&rdquo;</p>
-									</blockquote>
-								</div>
-							</div>
-							<div class="item">
-								<div class="testimony-slide active text-center">
-									<figure>
-										<img src="{% static 'images/person_2.jpg' %}" alt="user">
-									</figure>
-									<span>李丞平<a href="#" class="twitter"></a></span>
-									<blockquote>
-										<p>&ldquo;當你能飛的時候就不要拋卻飛。當你能夢的時候就不要拋卻夢。 &rdquo;</p>
-									</blockquote>
-								</div>
-							</div>
-							<div class="item">
-								<div class="testimony-slide active text-center">
-									<figure>
-										<img src="{% static 'images/person_3.jpg' %}" alt="user">
-									</figure>
-									<span>林宇晨<a href="#" class="twitter"></a></span>
-									<blockquote>
-										<p>&ldquo;巨人之所以偉大，是因為他與別人共處逆境時，別人失去了信念，他卻下決心實現自己的目的。 &rdquo;</p>
-									</blockquote>
-								</div>
-							</div>
-							<div class="item">
-								<div class="testimony-slide active text-center">
-									<figure>
-										<img src="{% static 'images/person_4.jpg' %}" alt="user">
-									</figure>
-									<span>晏陽<a href="#" class="twitter"></a></span>
-									<blockquote>
-										<p>&ldquo;今天不努力工作，明天就要努力找工作。&rdquo;</p>
-									</blockquote>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+        <div id="fh5co-project">
+            <div class="container">
+                <div class="row animate-box">
+                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                        <h2>CATEGORY</h2>
+                        <p>校內目前所擁有之球賽種類</p>
+                    </div>
+                </div>
+            </div>
+            <div class="project-content">
+                <div class="col-forth">
+                    <div class="project animate-box" style="background-image:url({% static 'images/project-8.jpg' %});">
+                        <a href="football_page/" class="desc">
+                            <span>足球</span>
+                            <h3>Football</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-forth">
+                    <div class="project animate-box" style="background-image:url({% static 'images/project-1.jpg' %});">
+                        <a href="#" class="desc">
+                            <span>籃球</span>
+                            <h3>Basketball</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-forth">
+                    <div class="project animate-box" style="background-image:url({% static 'images/project-2.jpg' %});">
+                        <a href="#" class="desc">
+                            <span>排球</span>
+                            <h3>Volleyball</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-forth">
+                    <div class="project animate-box" style="background-image:url({% static 'images/project-3.jpg' %});">
+                        <a href="#" class="desc">
+                            <span>羽毛球</span>
+                            <h3>Badminton</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="fh5co-testimonial" class="fh5co-bg-section">
+            <div class="container">
+                <div class="row animate-box">
+                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                        <h2>Developers</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="row animate-box">
+                            <div class="owl-carousel owl-carousel-fullwidth">
+                                <div class="item">
+                                    <div class="testimony-slide active text-center">
+                                        <figure>
+                                            <img src="{% static 'images/person_1.jpg' %}" alt="user">
+                                        </figure>
+                                        <span>柯宏穎<a href="#" class="twitter"></a></span>
+                                        <blockquote>
+                                            <p>&ldquo;勝利不是將來才有的，而是從抉擇去做的那一刻起，持續累積而成。&rdquo;</p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="testimony-slide active text-center">
+                                        <figure>
+                                            <img src="{% static 'images/person_2.jpg' %}" alt="user">
+                                        </figure>
+                                        <span>李丞平<a href="#" class="twitter"></a></span>
+                                        <blockquote>
+                                            <p>&ldquo;當你能飛的時候就不要拋卻飛。當你能夢的時候就不要拋卻夢。 &rdquo;</p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="testimony-slide active text-center">
+                                        <figure>
+                                            <img src="{% static 'images/person_3.jpg' %}" alt="user">
+                                        </figure>
+                                        <span>林宇晨<a href="#" class="twitter"></a></span>
+                                        <blockquote>
+                                            <p>&ldquo;巨人之所以偉大，是因為他與別人共處逆境時，別人失去了信念，他卻下決心實現自己的目的。 &rdquo;</p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="testimony-slide active text-center">
+                                        <figure>
+                                            <img src="{% static 'images/person_4.jpg' %}" alt="user">
+                                        </figure>
+                                        <span>晏陽<a href="#" class="twitter"></a></span>
+                                        <blockquote>
+                                            <p>&ldquo;今天不努力工作，明天就要努力找工作。&rdquo;</p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
-	<div id="fh5co-started">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>意見箱</h2>
-					<p>讓我們知道您的建議 讓我們一起變得更好</p>
-				</div>
-			</div>
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center">
-					<p><a href="#" class="btn btn-default btn-lg">START</a></p>
-				</div>
-			</div>
-		</div>
-	</div>
+        <div id="fh5co-started">
+            <div class="container">
+                <div class="row animate-box">
+                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                        <h2>意見箱</h2>
+                        <p>讓我們知道您的建議 讓我們一起變得更好</p>
+                    </div>
+                </div>
+                <div class="row animate-box">
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        <p><a href="#" class="btn btn-default btn-lg">START</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-	<footer id="fh5co-footer" role="contentinfo">
-		<div class="container">
-			<div class="row row-pb-md">
-				<div class="col-md-4 fh5co-widget">
-					<h3>關於我們</h3>
-					<p>四個因為一門課而相識的大學生。</p>
-					<p><a class="btn btn-primary btn-outline with-arrow" href="#">Learn More <i class="icon-arrow-right"></i></a></p>
-				</div>
-				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-					<ul class="fh5co-footer-links">
-						<li><a href="#">About</a></li>
-						<li><a href="#">Help</a></li>
-						<li><a href="#">Contact</a></li>
-						<li><a href="#">Terms</a></li>
-						<li><a href="#">Meetups</a></li>
-					</ul>
-				</div>
+        <footer id="fh5co-footer" role="contentinfo">
+            <div class="container">
+                <div class="row row-pb-md">
+                    <div class="col-md-4 fh5co-widget">
+                        <h3>關於我們</h3>
+                        <p>四個因為一門課而相識的大學生。</p>
+                        <p><a class="btn btn-primary btn-outline with-arrow" href="#">Learn More <i class="icon-arrow-right"></i></a></p>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+                        <ul class="fh5co-footer-links">
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Help</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Meetups</a></li>
+                        </ul>
+                    </div>
 
-				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-					<ul class="fh5co-footer-links">
-						<li><a href="#">Shop</a></li>
-						<li><a href="#">Privacy</a></li>
-						<li><a href="#">Testimonials</a></li>
-						<li><a href="#">Handbook</a></li>
-						<li><a href="#">Held Desk</a></li>
-					</ul>
-				</div>
+                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+                        <ul class="fh5co-footer-links">
+                            <li><a href="#">Shop</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                            <li><a href="#">Handbook</a></li>
+                            <li><a href="#">Held Desk</a></li>
+                        </ul>
+                    </div>
 
-				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-					<ul class="fh5co-footer-links">
-						<li><a href="#">Find Designers</a></li>
-						<li><a href="#">Find Developers</a></li>
-						<li><a href="#">Teams</a></li>
-						<li><a href="#">Advertise</a></li>
-						<li><a href="#">API</a></li>
-					</ul>
-				</div>
-			</div>
+                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+                        <ul class="fh5co-footer-links">
+                            <li><a href="#">Find Designers</a></li>
+                            <li><a href="#">Find Developers</a></li>
+                            <li><a href="#">Teams</a></li>
+                            <li><a href="#">Advertise</a></li>
+                            <li><a href="#">API</a></li>
+                        </ul>
+                    </div>
+                </div>
 
-			<div class="row copyright">
-				<div class="col-md-12 text-center">
-					<p>
-						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small>
-						<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
-					</p>
-					<p>
-						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
-						</ul>
-					</p>
-				</div>
-			</div>
+                <div class="row copyright">
+                    <div class="col-md-12 text-center">
+                        <p>
+                            <small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small>
+                            <small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
+                        </p>
+                        <p>
+                            <ul class="fh5co-social-icons">
+                                <li><a href="#"><i class="icon-twitter"></i></a></li>
+                                <li><a href="#"><i class="icon-facebook"></i></a></li>
+                                <li><a href="#"><i class="icon-linkedin"></i></a></li>
+                                <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
 
-		</div>
-	</footer>
-	</div>
+            </div>
+        </footer>
+    </div>
 
-	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-	</div>
+    <div class="gototop js-top">
+        <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+    </div>
 
-	<!-- jQuery -->
-	<script src="{% static 'js/jquery.min.js' %}"></script>
-	<!-- jQuery Easing -->
-	<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
-	<!-- Bootstrap -->
-	<script src="{% static 'js/bootstrap.min.js' %}"></script>
-	<!-- Waypoints -->
-	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
-	<!-- Stellar Parallax -->
-	<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
-	<!-- Carousel -->
-	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
-	<!-- Main -->
-	<script src="{% static 'js/main.js' %}"></script>
+    <!-- jQuery -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <!-- jQuery Easing -->
+    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- Waypoints -->
+    <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+    <!-- Stellar Parallax -->
+    <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+    <!-- Carousel -->
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <!-- Main -->
+    <script src="{% static 'js/main.js' %}"></script>
 
-	</body>
+</body>
+
 </html>

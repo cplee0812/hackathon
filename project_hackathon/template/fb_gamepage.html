@@ -21,6 +21,55 @@
 <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
 
 <head>
+    <nav class="fh5co-nav" role="navigation">
+        <div class="top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-right">
+                        <p class="num">Call: +01 123 456 7890</p>
+                        <ul class="fh5co-social">
+                            <li><a href="#"><i class="icon-twitter"></i></a></li>
+                            <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                            <li><a href="#"><i class="icon-github"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <div id="fh5co-logo"><a href="http://csx.ntu.edu.tw/">NTU/<span>/CS+X</span></a></div>
+                    </div>
+                    <div class="col-xs-10 text-right menu-1">
+                        <ul>
+                            <!-- <li class="active"><a href="index.html">Home</a></li> -->
+                            <li><a href="work.html">Work</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li class="has-dropdown">
+                                <a href="services.html">Services</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">Web Design</a></li>
+                                    <li><a href="#">eCommerce</a></li>
+                                    <li><a href="#">Branding</a></li>
+                                    <li><a href="#">API</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="contact.html">Contact</a></li>
+                            {% if request.user.is_authenticated %}
+                            <li class="btn-cta"><a href="/logout"><span>Logout</span></a></li>
+                            {% else %}
+                            <li class="btn-cta"><a href="/login"><span>Login</span></a></li>
+                            <li class="btn-cta"><a href="/register"><span>Register</span></a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
 
     <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url({% static 'images/img_bg_1.jpg' %});" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
@@ -30,8 +79,7 @@
                     <div class="display-t">
                         <div class="display-tc animate-box" data-animate-effect="fadeIn">
 
-
-                            <p1>GAME #{{000001}}</p1>
+                            <h1>GAME #{{000001}}</h1>
 
                             <table style="padding:20px">
                                 <tr>
@@ -79,7 +127,12 @@
 </head>
 
 <body>
-    <div style="padding:20px">
+    <div id="fh5co-services" class="fh5co-bg-section">
+        <div class="row animate-box">
+            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                <h2>GAME LOG</h2>
+            </div>
+        </div>
         <div style="float:left">
             <table>
                 <div>
@@ -181,19 +234,89 @@
             </table>
         </div>
     </div>
-    <br><br><br><br>
 
-    <div>
-        <p style="font-size: 150%">Broadcast</p>
-        <div style="border-style:solid;border-width:2px">
-            <div class='msg'>
-                <span class="time">{{ TIME 13:31 </span> Player A goal !!
+
+    <div id="fh5co-started">
+        <div class="container">
+            <div class="row animate-box">
+                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                    <h2>Live Broadcast</h2>
+                    <p>Renew Time </p>
+                </div>
             </div>
-            <div class='msg'>
-                <span class="time">{{ TIME 13:31 </span> Player A goal !!
+            <div>
+                <div class='msg'>
+                    <span class="name">{{msg.time </span> {{msg.message
+
+                </div>
+            </div>
+            <div id="send-box">
+                <form id="send-form" action="." method="POST">{% csrf_token %}
+                    <input type="text" name="msg" id="msg" placeholder="說點什麼？">
+                    <input type="submit" id="submit" value="送出">
+                </form>
             </div>
         </div>
     </div>
+    <footer id="fh5co-footer" role="contentinfo">
+        <div class="container">
+            <div class="row row-pb-md">
+                <div class="col-md-4 fh5co-widget">
+                    <h3>關於我們</h3>
+                    <p>四個因為一門課而相識的大學生。</p>
+                    <p><a class="btn btn-primary btn-outline with-arrow" href="#">Learn More <i class="icon-arrow-right"></i></a></p>
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+                    <ul class="fh5co-footer-links">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Meetups</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+                    <ul class="fh5co-footer-links">
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Handbook</a></li>
+                        <li><a href="#">Held Desk</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+                    <ul class="fh5co-footer-links">
+                        <li><a href="#">Find Designers</a></li>
+                        <li><a href="#">Find Developers</a></li>
+                        <li><a href="#">Teams</a></li>
+                        <li><a href="#">Advertise</a></li>
+                        <li><a href="#">API</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row copyright">
+                <div class="col-md-12 text-center">
+                    <p>
+                        <small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small>
+                        <small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
+                    </p>
+                    <p>
+                        <ul class="fh5co-social-icons">
+                            <li><a href="#"><i class="icon-twitter"></i></a></li>
+                            <li><a href="#"><i class="icon-facebook"></i></a></li>
+                            <li><a href="#"><i class="icon-linkedin"></i></a></li>
+                            <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
 </body>
 
 
