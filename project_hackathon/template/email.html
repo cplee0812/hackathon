@@ -19,7 +19,7 @@
 <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
 
 <head>
-<title>All Football Games Are Here</title>
+<title>回饋表</title>
 
 <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url({% static 'images/img_bg_1.jpg' %});"
 data-stellar-background-ratio="0.5">
@@ -29,10 +29,15 @@ data-stellar-background-ratio="0.5">
 				<div class="col-md-6">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<p>
-        						All Football Games Are Here
-    						</p>
-							<a href="/fb_gamepage">Game #00001</a>
+							<!-- templates/email.html -->
+							<h1>Contact Us</h1>
+							<form method="post">
+							    {% csrf_token %}
+							    {{ form.as_p }}
+							    <div class="form-actions">
+							      <button type="submit">Send</button>
+							    </div>
+							</form>
 						</div>
 					</div>
 				</div>
