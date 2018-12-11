@@ -9,4 +9,6 @@ def mainpage(request):
 
 def gamepage(request):
 
+    
+
     return render(request,"fb_gamepage.html",locals())

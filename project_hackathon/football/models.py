@@ -1,9 +1,11 @@
 from django.db import models
 
-'''
-    class game_imfo(models.Model):
+
+    class match_imfo(models.Model):
         game_num = models.IntegerField()
-        game_time = models.DateTimeField()
+        game_starttime = models.DateTimeField()
+
+        #兩個starttime，兩個endtime，
         game_place = models.CharField()
 
         def __init__(self):
@@ -15,11 +17,10 @@ from django.db import models
         score = 
 
 
-    class livebroadcast(models.Model):
+    #class livebroadcast(models.Model):
         
 
 
 
     # Create your models here.
 
-'''
