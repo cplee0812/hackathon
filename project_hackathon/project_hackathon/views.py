@@ -7,6 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from django.template import loader
 from django.conf.urls.static import static
+from football.models import Team, Player, Match, MatchStat
 
 def homepage(request):
 
@@ -54,11 +55,37 @@ def gamepage(request):
 
 def teampage(request):
 
-	return render(request, 'teampage.html',locals())
+	class NewTeam(forms.ModelForm):
+		class Meta:
+			model = Team
+			fields = '__all__'
+
+	if request.method == 'POST':
+		form = NewTeam(request.POST)
+		if form.is_valid():
+			form.save()
+			return redirect('/teampage/')
+	#		return render(request,'create.html',locals())
+	else:
+		form = NewTeam()
+		return render(request, 'teampage.html', locals())
 
 def personalpage(request):
 
-	return render(request, 'personalpage.html',locals())
+	class NewPlayer(forms.ModelForm):
+		class Meta:
+			model = Player
+			fields = '__all__'
+
+	if request.method == 'POST':
+		form = NewPlayer(request.POST)
+		if form.is_valid():
+			form.save()
+			return redirect('/personalpage/')
+	#		return render(request,'create.html',locals())
+	else:
+		form = NewPlayer()
+		return render(request, 'personalpage.html', locals())
 
 def big_month(i):
 	return (i == 1 or i == 3 or i == 5 or i == 7 or i == 8 or i == 10 or i == 12)
@@ -81,7 +108,23 @@ def create(request):
 	for i in range(20):
 		member.append(i + 1)
 	context = {"dates" : date, "members" : member, "positions" : position}
-	return HttpResponse(template.render(context, request))
+#	return HttpResponse(template.render(context, request))
+
+	class NewMatch(forms.ModelForm):
+		class Meta:
+			model = Match
+			fields = '__all__'
+#			widgets = {'starttime1':forms.SplitSelectDateTimeWidget()}
+
+	if request.method == 'POST':
+		form = NewMatch(request.POST)
+		if form.is_valid():
+			form.save()
+			return redirect('/create/')
+	#		return render(request,'create.html',locals())
+	else:
+		form = NewMatch()
+		return render(request, 'create.html', locals())
 
 def basketball_gamepage(request):
 	template = loader.get_template('basketball_gamepage.html')

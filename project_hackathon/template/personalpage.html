@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>加入團隊！</title>
 </head>
 <body>
+
+	<form action="." method="POST">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<!--
+		<input type="text" name="vocab" id="name" placeholder="單字">
+		<input type="text" name="meaning" id="msg" placeholder="意思">
+		-->
+		<input type="submit" />
+	</form>
 
 </body>
 </html>
