@@ -111,9 +111,33 @@
                         </div>
                     </div>
 
+<<<<<<< HEAD
                 </div>
             </div>
         </nav>
+=======
+	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url({% static 'images/img_bg_1.jpg' %});" data-stellar-background-ratio="0.5"> <!--data-stellar-background-ratio:控制滾動頁面時背景圖片跟著移動的速率-->
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="display-t">
+						<div class="display-tc animate-box" data-animate-effect="fadeIn">
+							<h1><strong>運動聯賽整合系統</strong><br>"Winning isn't everything,<br> but wanting to win is."</h1>
+							<p><a href="https://docs.google.com/presentation/d/1kZc_XiGCaPDPsliuG136vD1yPH1O19g7b1LWN7kMndE/edit?fbclid=IwAR31L7pUsEHOmiQpQIjeNSdtycEiAOzjWnRJi57zjqn-peEvzCwYkTjc9p0#slide=id.g48659493f8_0_222" class="btn btn-primary btn-lg with-arrow">查看比賽資訊</a></p>
+							{% if request.user.is_authenticated %}
+								<p><a href="/personalpage" class="btn btn-primary btn-lg with-arrow">加入團隊</a></p>
+								<p><a href="/teampage" class="btn btn-primary btn-lg with-arrow">建立團隊</a></p>
+								<p><a href="/create" class="btn btn-primary btn-lg with-arrow">舉辦比賽</a></p>
+								<p><a href="#" class="btn btn-primary btn-lg with-arrow">參加比賽</a></p>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+>>>>>>> e6cb70234114918acf93a8e42d0451b5e1c0af8d
 
         <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url({% static 'images/img_bg_1.jpg' %});" data-stellar-background-ratio="0.5">
             <!--data-stellar-background-ratio:控制滾動頁面時背景圖片跟著移動的速率-->
