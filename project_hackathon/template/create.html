@@ -30,56 +30,60 @@ data-stellar-background-ratio="0.5">
 							<h1>Creat a Game</h1>
 							<h3>Game Information<h3>
 							<div id="send-box">
-						        <form id="send-form">
-						            <form>
-						            	Type
-										<select name="Type">
-						　					<option value="Foot Ball">Foot Ball</option>
-						　					<option value="Basketball">Basketball</option>
-						　					<option value="Baseball">Baseball</option>
-						　					<option value="Tennis">Tennis</option>
-										</select>
-									</form>
-						
-									<form>
-						            	Date
-										<select name="Date">
-											{% for d in dates %}
-						　						<option value="dates">{{d}}</option>
-											{% endfor %}
-										</select>
-									</form>
-						
-									<form>
-						            	Numbers of Member In Each Team
-										<select name="Num_mem">
-											{% for m in members %}
-						　						<option value="Num_mems">{{m}}</option>
-											{% endfor %}
-										</select>
-									</form>
-						
-									<form>
-						            	Position
-										<select name="Position">
-											{% for p in positions %}
-						　						<option value="Positions">{{p}}</option>
-											{% endfor %}
-											<input type="text" name="Other_position" placeholder="Location if it is not in the form">
-										</select>
-									</form>
-						
-									<h3>Host Information</h3>
-						
-									<form>
-										Host Username： {{request.user}} <br>
-										Host Name <input type="text" name="Host_name" placeholder="Host Name"><br>
-										Host ID <input type="text" name="Host_ID" placeholder="Host ID">(ex : b06902074)<br>
-										Host Phone Number <input type="text" name="Host_phone" placeholder="Host Phone Number">(ex : 0987654321)<br>
-									</form>			
-						
-						            <input type="submit" id="submit" value="Send">
-        						</form>
+								<form action="/create/" method = "post">
+							        <form id="send-form">
+							            <form>
+							            	Type
+											<select name="Type">
+							　					<option value="Foot Ball" selected="">Foot Ball</option>
+							　					<option value="Basketball">Basketball</option>
+							　					<option value="Baseball">Baseball</option>
+							　					<option value="Tennis">Tennis</option>
+												<input type="text" name="Type" placeholder="Type">
+											</select>
+										</form>
+							
+										<form>
+							            	Date
+											<select name="Date">
+												{% for d in dates %}
+							　						<option value="dates">{{d}}</option>
+												{% endfor %}
+											</select>
+											<input type="text" name="Date" placeholder="Date">
+										</form>
+							
+										<form>
+							            	Numbers of Member In Each Team
+											<select name="Num_mem">
+												{% for m in members %}
+							　						<option value="Num_mems">{{m}}</option>
+												{% endfor %}
+											</select>
+											<input type="Text" name="Num_mem" placeholder="Num">
+										</form>
+							
+										<form>
+							            	Position
+											<select name="Position">
+												{% for p in positions %}
+							　						<option value="Positions">{{p}}</option>
+												{% endfor %}
+												<input type="text" name="Other_position" placeholder="Location if it is not in the form">
+											</select>
+										</form>
+							
+										<h3>Host Information</h3>
+							
+										<form>
+											Host Username： {{request.user}} <br>
+											Host Name <input type="text" name="Host_name" placeholder="Host Name"><br>
+											Host ID <input type="text" name="Host_ID" placeholder="Host ID">(ex : b06902074)<br>
+											Host Phone Number <input type="text" name="Host_phone" placeholder="Host Phone Number">(ex : 0987654321)<br>
+										</form>			
+							            <input type="submit" id="submit" value="Send">
+	        						</form>
+	        					</form>
 						</div>
 					</div>
 				</div>

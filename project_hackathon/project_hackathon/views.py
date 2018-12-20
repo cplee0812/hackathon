@@ -7,6 +7,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from django.template import loader
 from django.conf.urls.static import static
+from database.models import Create_The_Game
+from django.template import RequestContext
 
 def homepage(request):
 
@@ -64,6 +66,8 @@ def big_month(i):
 	return (i == 1 or i == 3 or i == 5 or i == 7 or i == 8 or i == 10 or i == 12)
 
 def create(request):
+	if 'Type' in request.GET:
+		Create_The_Game.objects.create(Type = request.GET['Type'], Date = request.GET['Date'], Number = request.GET['Num_mem'], default_pos = request.GET['Position'], pos = request.GET['Other_position'], Host_Name = request.GET['Host_Name'], Host_ID = request.GET['Host_ID'], Host_Phone_Number = request.GET['Host_phone'])
 	date = []
 	member = []
 	position = ["NTU Sport Center", "NTU Sport Center (new)", "Sports Field", "Others"]
@@ -111,3 +115,7 @@ def volleyball_gamepage(request):
 def volleyball_mainpage(request):
 
 	return render(request, 'volleyball_mainpage.html', locals())
+
+def check(request):
+	Inf = Create_The_Game.objects.all()
+	return render(request, 'check.html', locals())

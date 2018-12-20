@@ -38,4 +38,5 @@ urlpatterns = [
     path('', include('sendemail.urls')),
     path('email/',views.email),
     path('success/',views.email),
+    path('check/', views.check)
 ]

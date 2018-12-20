@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+
+<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
+<!-- Animate.css -->
+<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+<!-- Icomoon Icon Fonts-->
+<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+<!-- Bootstrap  -->
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+<!-- Owl Carousel  -->
+<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+<!-- Theme style  -->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<!-- Modernizr JS -->
+<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+
+<body>
+<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url({% static 'images/img_bg_1.jpg' %});" 
+data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="display-t">
+						<div class="display-tc animate-box" data-animate-effect="fadeIn">
+							{% for inf in Inf %}
+                    			Type <span>{{inf.Type}}</span><br>
+                    			Date <span>{{inf.Date}}</span><br>
+                    			Location <span>{{inf.default_pos}}</span><br>
+                    			Location <span>{{inf.pos}}</span><br>
+                    			Host Name <span>{{inf.Host_Name}}</span><br>
+                    			Host ID <span>{{inf.Host_ID}}</span><br>
+                    			Host Phone <span>{{inf.Host_Phone}}</span><br>
+                			{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+    </div>
+</body>
+
+<!-- jQuery -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<!-- jQuery Easing -->
+<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+<!-- Bootstrap -->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!-- Waypoints -->
+<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+<!-- Stellar Parallax -->
+<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+<!-- Carousel -->
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<!-- Main -->
+<script src="{% static 'js/main.js' %}"></script>
+
+</html>

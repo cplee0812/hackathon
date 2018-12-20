@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'database',
     'football',
     'sendemail.apps.SendemailConfig',
 ]
@@ -82,7 +83,7 @@ DATABASES = {
         'NAME': 'csxhackathon',
         'USER': 'helloworld',
         'PASSWORD': '',
-        'HOST': '',
+        'HOST': 'localhost',
         'PORT': '',
     }
 }
