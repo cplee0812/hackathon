@@ -1,13 +1,8 @@
 from django.db import models
-<<<<<<< HEAD
-    
-    
-=======
 from django import forms
 
 # Create your models here.
 
->>>>>>> e6cb70234114918acf93a8e42d0451b5e1c0af8d
 class Team(models.Model):
 	"""docstring for Player"""
 	name = models.CharField(max_length=20, blank=False)
@@ -36,35 +31,6 @@ class Match(models.Model):
 	duration2 = models.IntegerField(blank=False)
 	team1 = models.ForeignKey(Team, on_delete=models.PROTECT, related_name='Home Team +')
 	team2 = models.ForeignKey(Team, on_delete=models.PROTECT, related_name='Away Team +')
-<<<<<<< HEAD
-	score = models.IntegerField(blank=True)
-    
-#class match_imfo(models.Model):
-    #game_num = models.IntegerField()
-    #game_starttime = models.DateTimeField()
-
-        #兩個starttime，兩個endtime，
-    #game_place = models.CharField(max_length)
-
-    #def __init__(self):
-        #return self.game_num
-
-
-#class gamelog(models.Model):
-        
-    #score = 
-
-
-    #class livebroadcast(models.Model):
-        
-
-
-
-    # Create your models here.
-
-
-# Create your models here.    
-=======
 
 	def __str__(self):
 		return self.name
@@ -73,4 +39,13 @@ class MatchStat(models.Model):
 	match = models.ForeignKey(Match, on_delete=models.PROTECT)
 	host_score = models.IntegerField(blank=True)
 	away_score = models.IntegerField(blank=True)
->>>>>>> e6cb70234114918acf93a8e42d0451b5e1c0af8d
+
+class broadcast_msg(models.Model):
+
+	match_id = models.ForeignKey(Match, on_delete = models.PROTECT)
+	happened_time = models.TimeField(blank=False)
+	message = models.CharField(max_length=40, blank=False)
+
+	def __str__(self):
+		return self.happened_time + "  " + self.message
+
