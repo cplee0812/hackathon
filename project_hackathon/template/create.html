@@ -91,6 +91,16 @@ data-stellar-background-ratio="0.5">
 		</div>
 	</header>
 
+	<form action="." method="POST">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<!--
+		<input type="text" name="vocab" id="name" placeholder="單字">
+		<input type="text" name="meaning" id="msg" placeholder="意思">
+		-->
+		<input type="submit" />
+	</form>
+
     </div>
 	<!-- jQuery -->
 	<script src="{% static 'js/jquery.min.js' %}"></script>

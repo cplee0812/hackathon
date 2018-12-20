@@ -124,6 +124,8 @@
 							<h1><strong>運動聯賽整合系統</strong><br>"Winning isn't everything,<br> but wanting to win is."</h1>
 							<p><a href="/check" class="btn btn-primary btn-lg with-arrow">查看比賽資訊</a></p>
 							{% if request.user.is_authenticated %}
+								<p><a href="/personalpage" class="btn btn-primary btn-lg with-arrow">加入團隊</a></p>
+								<p><a href="/teampage" class="btn btn-primary btn-lg with-arrow">建立團隊</a></p>
 								<p><a href="/create" class="btn btn-primary btn-lg with-arrow">舉辦比賽</a></p>
 								<p><a href="#" class="btn btn-primary btn-lg with-arrow">參加比賽</a></p>
 							{% endif %}
