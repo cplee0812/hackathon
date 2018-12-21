@@ -8,6 +8,7 @@ from django import forms
 from django.template import loader
 from django.conf.urls.static import static
 from football.models import Team, Player, Match, MatchStat
+from sendemail.models import ContactForm
 
 def homepage(request):
 
@@ -145,7 +146,22 @@ def basketball_gamepage(request):
 def basketball_mainpage(request):
 	return render(request, 'basketball_mainpage.html',locals())
 def email(request):
-	return render(request, 'email.html', locals())
+	class Newemail(forms.ModelForm):
+		class Meta:
+			model = ContactForm
+			fields = '__all__'
+
+	if request.method == 'POST':
+		form = Newemail(request.POST)
+		if form.is_valid():
+			form.save()
+			return render(request, 'success.html', locals())
+	#		return redirect('/success/')
+	#		return render(request,'create.html',locals())
+	else:
+		form = Newemail()
+		return render(request, 'email.html', locals())
+#	return render(request, 'email.html', locals())
 
 def volleyball_gamepage(request):
 
