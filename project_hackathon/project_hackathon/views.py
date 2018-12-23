@@ -7,7 +7,6 @@ from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from django.template import loader
 from django.conf.urls.static import static
-from database.models import Create_The_Game
 from django.template import RequestContext
 from football.models import Team, Player, Match, MatchStat
 from sendemail.models import ContactForm
@@ -176,5 +175,5 @@ def volleyball_mainpage(request):
 	return render(request, 'volleyball_mainpage.html', locals())
 
 def check(request):
-	Inf = Create_The_Game.objects.all()
+	inf = Match.objects.all()
 	return render(request, 'check.html', locals())

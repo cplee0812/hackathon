@@ -27,14 +27,12 @@ data-stellar-background-ratio="0.5">
 				<div class="col-md-6">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							{% for inf in Inf %}
-                    			Type <span>{{inf.Type}}</span><br>
-                    			Date <span>{{inf.Date}}</span><br>
-                    			Location <span>{{inf.default_pos}}</span><br>
-                    			Location <span>{{inf.pos}}</span><br>
-                    			Host Name <span>{{inf.Host_Name}}</span><br>
-                    			Host ID <span>{{inf.Host_ID}}</span><br>
-                    			Host Phone <span>{{inf.Host_Phone}}</span><br>
+							{% for Inf in inf %}
+                    			Type <span>{{Inf.name}}</span><br>
+                    			Date <span>{{Inf.date_Y}} {{Inf.date_M}} {{Inf.date_D}}</span><br>
+                    			Location <span>{{Inf.location}}</span><br>
+                    			Team1 <span>{{Inf.team1}}</span><br>
+                    			Team2 <span>{{Inf.team2}}</span><br>
                 			{% endfor %}
 						</div>
 					</div>

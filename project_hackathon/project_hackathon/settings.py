@@ -82,13 +82,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'csxhackathon',
         'USER': 'helloworld',
-<<<<<<< HEAD
         'PASSWORD': '',
         'HOST': 'localhost',
-=======
         'PASSWORD': '1',
         'HOST': '',
->>>>>>> ba71b0619d049468810c8735931e6ba9b85280ac
         'PORT': '',
     }
 }

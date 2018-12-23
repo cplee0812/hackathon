@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django import forms
 
 # Create your models here.
 
@@ -17,4 +18,3 @@ class Create_The_Game(models.Model):
 
 class test(models.Model):
 	test1 = models.CharField(max_length = 10, blank = False)
-		
