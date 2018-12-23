@@ -7,12 +7,9 @@ from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from django.template import loader
 from django.conf.urls.static import static
-<<<<<<< HEAD
 from database.models import Create_The_Game
 from django.template import RequestContext
-=======
 from football.models import Team, Player, Match, MatchStat
->>>>>>> e6cb70234114918acf93a8e42d0451b5e1c0af8d
 
 def homepage(request):
 
@@ -96,7 +93,8 @@ def big_month(i):
 	return (i == 1 or i == 3 or i == 5 or i == 7 or i == 8 or i == 10 or i == 12)
 
 def create(request):
-	if 'Type' in request.GET:
+	'''
+	if 'Type' in request.:
 		Create_The_Game.objects.create(Type = request.GET['Type'], Date = request.GET['Date'], Number = request.GET['Num_mem'], default_pos = request.GET['Position'], pos = request.GET['Other_position'], Host_Name = request.GET['Host_Name'], Host_ID = request.GET['Host_ID'], Host_Phone_Number = request.GET['Host_phone'])
 	date = []
 	member = []
@@ -115,8 +113,8 @@ def create(request):
 	for i in range(20):
 		member.append(i + 1)
 	context = {"dates" : date, "members" : member, "positions" : position}
-#	return HttpResponse(template.render(context, request))
-
+	return render(request, 'create.html', locals())
+	'''
 	class NewMatch(forms.ModelForm):
 		class Meta:
 			model = Match
@@ -132,7 +130,6 @@ def create(request):
 	else:
 		form = NewMatch()
 		return render(request, 'create.html', locals())
-
 def basketball_gamepage(request):
 	template = loader.get_template('basketball_gamepage.html')
 	player1 = ["John       ", "後衛", 15, 5, 2, 2]
