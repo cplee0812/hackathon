@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class Player(models.Model):
+"""class Player(models.Model):
 	"""docstring for Player"""
 	name = models.CharField(max_length=20, blank=False)
 	number = models.InteferField(blank=False)
@@ -24,4 +24,4 @@ class Match(models.Model):
 	duration2 = models.InteferField(blank=False)
 	team1 = models.ForeignKey(Team)
 	team2 = models.ForeignKey(Team)
-	score = models.InteferField()
+	score = models.InteferField()"""
