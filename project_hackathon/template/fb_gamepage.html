@@ -245,10 +245,12 @@
                 </div>
             </div>
             <div>
+                {% for msg in msgs %}
                 <div class='msg'>
-                    <span class="name">{{msg.time </span> {{msg.message
+                    <span class="name">{{ msg.happened_time }}</span> {{ msg.message }}
 
                 </div>
+                {% endfor %}
             </div>
             <div id="send-box">
                 <form id="send-form" action="." method="POST">{% csrf_token %}
