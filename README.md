@@ -15,3 +15,6 @@ csx107數位應用程式設計
 
 ---
 FEEDBACK--(https://wsvincent.com/django-contact-form/)
+
+20181221-把sendemail(回饋表)改回存進資料庫
+test

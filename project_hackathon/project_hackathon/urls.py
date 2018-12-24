@@ -35,7 +35,8 @@ urlpatterns = [
     path('basketball_gamepage/', views.basketball_gamepage),
     path('volleyball_gamepage/',views.volleyball_gamepage),
     path('volleyball_mainpage/',views.volleyball_mainpage),
-    path('', include('sendemail.urls')),
+    #path('', include('sendemail.urls')),
     path('email/',views.email),
     path('success/',views.email),
+    path('check/', views.check)
 ]

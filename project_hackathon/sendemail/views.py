@@ -1,13 +1,13 @@
 from django.shortcuts import render
 
 # sendemail/views.py
-from django.core.mail import send_mail, BadHeaderError
-from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, redirect
-from .forms import ContactForm
+#from django.core.mail import send_mail, BadHeaderError
+#from django.http import HttpResponse, HttpResponseRedirect
+#from django.shortcuts import render, redirect
+#from .forms import ContactForm
 
 
-def emailView(request):
+"""def emailView(request):
     if request.method == 'GET':
         form = ContactForm()
     else:
@@ -24,5 +24,5 @@ def emailView(request):
     return render(request, "email.html", {'form': form})
 
 def successView(request):
-    
-    return render(request, 'success.html',locals())
+
+    return render(request, 'success.html',locals())"""

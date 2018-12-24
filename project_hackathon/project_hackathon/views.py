@@ -7,7 +7,9 @@ from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from django.template import loader
 from django.conf.urls.static import static
+from django.template import RequestContext
 from football.models import Team, Player, Match, MatchStat
+from sendemail.models import ContactForm
 
 def homepage(request):
 
@@ -91,6 +93,9 @@ def big_month(i):
 	return (i == 1 or i == 3 or i == 5 or i == 7 or i == 8 or i == 10 or i == 12)
 
 def create(request):
+	'''
+	if 'Type' in request.:
+		Create_The_Game.objects.create(Type = request.GET['Type'], Date = request.GET['Date'], Number = request.GET['Num_mem'], default_pos = request.GET['Position'], pos = request.GET['Other_position'], Host_Name = request.GET['Host_Name'], Host_ID = request.GET['Host_ID'], Host_Phone_Number = request.GET['Host_phone'])
 	date = []
 	member = []
 	position = ["NTU Sport Center", "NTU Sport Center (new)", "Sports Field", "Others"]
@@ -108,8 +113,8 @@ def create(request):
 	for i in range(20):
 		member.append(i + 1)
 	context = {"dates" : date, "members" : member, "positions" : position}
-#	return HttpResponse(template.render(context, request))
-
+	return render(request, 'create.html', locals())
+	'''
 	class NewMatch(forms.ModelForm):
 		class Meta:
 			model = Match
@@ -125,7 +130,6 @@ def create(request):
 	else:
 		form = NewMatch()
 		return render(request, 'create.html', locals())
-
 def basketball_gamepage(request):
 	template = loader.get_template('basketball_gamepage.html')
 	player1 = ["John       ", "後衛", 15, 5, 2, 2]
@@ -145,7 +149,22 @@ def basketball_gamepage(request):
 def basketball_mainpage(request):
 	return render(request, 'basketball_mainpage.html',locals())
 def email(request):
-	return render(request, 'email.html', locals())
+	class Newemail(forms.ModelForm):
+		class Meta:
+			model = ContactForm
+			fields = '__all__'
+
+	if request.method == 'POST':
+		form = Newemail(request.POST)
+		if form.is_valid():
+			form.save()
+			return render(request, 'success.html', locals())
+	#		return redirect('/success/')
+	#		return render(request,'create.html',locals())
+	else:
+		form = Newemail()
+		return render(request, 'email.html', locals())
+#	return render(request, 'email.html', locals())
 
 def volleyball_gamepage(request):
 
@@ -154,3 +173,7 @@ def volleyball_gamepage(request):
 def volleyball_mainpage(request):
 
 	return render(request, 'volleyball_mainpage.html', locals())
+
+def check(request):
+	inf = Match.objects.all()
+	return render(request, 'check.html', locals())
