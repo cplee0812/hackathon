@@ -20,8 +20,8 @@ def mainpage(request):
 def gamepage(request):
 
     if request.method == 'POST':
-        nowtime = datetime.now()#.strftime('%H:%M:%S')
-        starttime = #request.Match.starttime1#.strftime('%H:%M:%S')
+        nowtime = datetime.now().strftime('%H:%M:%S')
+        starttime = request.Match.starttime1.strftime('%H:%M:%S')
         time = (nowtime - starttime).seconds
         _message = request.POST.get('msg')
         broadcast_msg.objects.create(happened_time=nowtime, message=_message)
