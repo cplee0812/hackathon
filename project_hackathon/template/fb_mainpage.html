@@ -32,6 +32,26 @@ data-stellar-background-ratio="0.5">
 							<p>
         						All Football Games Are Here
     						</p>
+    							<tr>
+    								<th></th>
+    								<th>Match</th>
+    								<th>Home</th>
+    								<th>v.s.</th>
+    								<th>Away</th>
+    								<th>Game Stats</th>
+    							</tr>
+    							<br>
+								<tr>
+    							{% for match in Matches %}
+									<td>{{ match.id}} </td>
+									<td>{{ match.name }}</td>
+									<td>{{ match.team1.name }}</td>
+									<td>v.s.</td>
+									<td>{{ match.team2.name}}</td>
+									<td><a href="/fb_gamepage/{{match.id}}">Game Stats {{match.id}}</a></td>
+									<td><center><a href="/edit/{{ vocabulary.id }}"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="/delete/{{ vocabulary.id }}"><span class="glyphicon glyphicon-trash"></span> Delete</a></center></td>
+								{% endfor %}
+								</tr>
 							<a href="/fb_gamepage">Game #00001</a>
 						</div>
 					</div>

@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import url
 from . import views
 from football import views as fb_views
 
@@ -30,7 +31,7 @@ urlpatterns = [
     path('personalpage/', views.personalpage),
     path('create/', views.create),
     path('football_page/',fb_views.mainpage),
-    path('fb_gamepage/', fb_views.gamepage),
+    url(r'fb_gamepage/(?P<id>\d+)$', fb_views.gamepage),
     path('basketball_page/', views.basketball_mainpage),
     path('basketball_gamepage/', views.basketball_gamepage),
     path('volleyball_gamepage/',views.volleyball_gamepage),
@@ -38,5 +39,9 @@ urlpatterns = [
     #path('', include('sendemail.urls')),
     path('email/',views.email),
     path('success/',views.email),
-    path('check/', views.check)
+    path('check/', views.check),
+    url(r'edit/(?P<id>\d+)$', fb_views.edit, name='edit'),
+    url(r'^edit/update/(?P<id>\d+)$', fb_views.update, name='update'),
+    url(r'^edit/host_score_plus1/(?P<id>\d+)$', fb_views.host_score_plus1, name='host_score_plus1'),
+    url(r'^edit/away_score_plus1/(?P<id>\d+)$', fb_views.away_score_plus1, name='away_score_plus1'),
 ]

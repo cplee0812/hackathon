@@ -1,5 +1,6 @@
 from django.db import models
 from django import forms
+from django_auto_one_to_one import AutoOneToOneModel
 
 # Create your models here.
 
@@ -51,17 +52,17 @@ class Match(models.Model):
 	date_Y = models.CharField(max_length = 100, choices = date_Y)
 	date_M = models.CharField(max_length = 100, choices = date_M)
 	date_D = models.CharField(max_length = 100, choices = date_D)
-	starttime1 = models.TimeField(blank=False)
-	duration1 = models.IntegerField(blank=False)
-	starttime2 = models.TimeField(blank=False)
-	duration2 = models.IntegerField(blank=False)
+	starttime1 = models.TimeField(blank=False, help_text="Format:'HH:MM'")
+	duration1 = models.IntegerField(blank=False, default=50)
+	starttime2 = models.TimeField(blank=False, help_text="Format:'HH:MM'")
+	duration2 = models.IntegerField(blank=False, default=50)
 	team1 = models.ForeignKey(Team, on_delete=models.PROTECT, related_name='Home Team +')
 	team2 = models.ForeignKey(Team, on_delete=models.PROTECT, related_name='Away Team +')
 
 	def __str__(self):
 		return self.name
 
-class MatchStat(models.Model):
+class MatchStat(AutoOneToOneModel(Match)):
 	match = models.ForeignKey(Match, on_delete=models.PROTECT)
-	host_score = models.IntegerField(blank=True)
-	away_score = models.IntegerField(blank=True)
+	host_score = models.IntegerField(blank=True, default=0)
+	away_score = models.IntegerField(blank=True, default=0)
