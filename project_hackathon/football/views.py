@@ -1,31 +1,45 @@
-from django.shortcuts import render
-from django.contrib.auth import authenticate
-from django.contrib import auth
-from django.http import HttpResponse
-from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
-from django import forms
-from django.template import loader
-from django.conf.urls.static import static
-from football.models import Team, Player, Match, MatchStat, broadcast_msg
-from datetime import datetime
-import time
+from django.shortcuts import render, redirect
+from football.models import Team, Player, Match, MatchStat
+
 # Create your views here.
 
 
 def mainpage(request):
 
-    return render(request,"fb_mainpage.html",locals())
+	Matches = Match.objects.all
+	return render(request,"fb_mainpage.html",locals())
 
-def gamepage(request):
+def gamepage(request, id):
 
-    if request.method == 'POST':
-        nowtime = datetime.now().strftime('%H:%M:%S')
-        starttime = request.Match.starttime1.strftime('%H:%M:%S')
-        time = (nowtime - starttime).seconds
-        _message = request.POST.get('msg')
-        broadcast_msg.objects.create(happened_time=nowtime, message=_message)
-		
-    msgs = broadcast_msg.objects.all()
+	MatchStats = MatchStat.objects.get(id=id)
 
-    return render(request,"fb_gamepage.html",locals())
+	return render(request,"fb_gamepage.html",locals())
+
+def edit(request, id):
+	MatchStats = MatchStat.objects.get(id=id)
+	return render(request, 'edit.html', locals())
+
+def update(request, id):
+	MatchStats.host_score = request.POST['host_score']
+	MatchStats.away_score = request.POST['away_score']
+	MatchStats.save()
+	return redirect("/fb_gamepage/%s" %id)
+
+def host_score_plus1(request, id):
+	if id:
+		MatchStats = MatchStat.objects.get(id=id)
+		score = MatchStats.host_score
+		score += 1
+		MatchStats.host_score = score
+		MatchStats.save()
+	return redirect("/fb_gamepage/%s" %id)
+
+
+def away_score_plus1(request, id):
+	if id:
+		MatchStats = MatchStat.objects.get(id=id)
+		score = MatchStats.away_score
+		score += 1
+		MatchStats.away_score = score
+		MatchStats.save()
+	return redirect("/fb_gamepage/%s" %id)

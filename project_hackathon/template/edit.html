@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<form method="POST" action="update/{{ MatchStats.id }}">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="firstname">Host Score</label>
+            <input type="text" name="host_score" value="{{ MatchStats.host_score }}" required="required"/>
+        </div>
+        <div class="form-group">
+            <label for="lastname">Away Score</label>
+            <input type="text" name="away_score" value="{{ MatchStats.away_score }}" required="required"/>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-edit"></span> Update</button>
+        </div>
+    </form>
+
+    {{MatchStats.host_score}}<br>
+    <a href="host_score_plus1/{{MatchStats.id}}">Home PLus 1</a><br>
+    {{MatchStats.away_score}}<br>
+    <a href="away_score_plus1/{{MatchStats.id}}">Away PLus 1</a>
+	
+</body>
+</html>

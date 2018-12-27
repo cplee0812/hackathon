@@ -19,6 +19,7 @@
 <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
 
 <head>
+<<<<<<< HEAD
     <title>All Football Games Are Here</title>
     <nav class="fh5co-nav" role="navigation">
         <div class="top">
@@ -146,6 +147,51 @@
 
         </div>
     </footer>
+=======
+<title>All Football Games Are Here</title>
+
+<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url({% static 'images/img_bg_1.jpg' %});" 
+data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="display-t">
+						<div class="display-tc animate-box" data-animate-effect="fadeIn">
+							<p>
+        						All Football Games Are Here
+    						</p>
+    							<tr>
+    								<th></th>
+    								<th>Match</th>
+    								<th>Home</th>
+    								<th>v.s.</th>
+    								<th>Away</th>
+    								<th>Game Stats</th>
+    							</tr>
+    							<br>
+								<tr>
+    							{% for match in Matches %}
+									<td>{{ match.id}} </td>
+									<td>{{ match.name }}</td>
+									<td>{{ match.team1.name }}</td>
+									<td>v.s.</td>
+									<td>{{ match.team2.name}}</td>
+									<td><a href="/fb_gamepage/{{match.id}}">Game Stats {{match.id}}</a></td>
+									<br>
+									<!--
+									<td><center><a href="/edit/{{ vocabulary.id }}"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="/delete/{{ vocabulary.id }}"><span class="glyphicon glyphicon-trash"></span> Delete</a></center></td>
+									-->
+								{% endfor %}
+								</tr>
+							<a href="/fb_gamepage">Game #00001</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+>>>>>>> a27bdc6807f9e63cc3a03baff63eaa73aa149f02
 
     </div>
     <!-- jQuery -->
