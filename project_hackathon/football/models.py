@@ -52,7 +52,7 @@ class Match(models.Model):
 	date_Y = models.CharField(max_length = 100, choices = date_Y)
 	date_M = models.CharField(max_length = 100, choices = date_M)
 	date_D = models.CharField(max_length = 100, choices = date_D)
-	starttime1 = models.TimeField(blank=False, help_text="Format:'HH:MM'")
+	starttime1 = models.TimeField(blank=False, help_text="Format:'HH:MM:SS'", default='00:00:00')
 	duration1 = models.IntegerField(blank=False, default=50)
 	starttime2 = models.TimeField(blank=False, help_text="Format:'HH:MM'")
 	duration2 = models.IntegerField(blank=False, default=50)
@@ -67,11 +67,11 @@ class MatchStat(AutoOneToOneModel(Match)):
 	host_score = models.IntegerField(blank=True, default=0)
 	away_score = models.IntegerField(blank=True, default=0)
 
-class broadcast_msg(models.Model):
+class broadcast_msg(AutoOneToOneModel(Match)):
 
-	match_id = models.ForeignKey(Match, on_delete = models.PROTECT)
-	happened_time = models.TimeField(blank=False)
-	message = models.CharField(max_length=40, blank=False)
+	match = models.ForeignKey(Match, on_delete = models.PROTECT)
+	happened_time = models.TimeField(blank=False, default='00:00:00')
+	message = models.CharField(max_length=40, blank=True)
 
 	def __str__(self):
 		return self.happened_time + "  " + self.message

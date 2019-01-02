@@ -239,14 +239,14 @@
     <div id="fh5co-services" class="fh5co-bg-section">
         <div class="row animate-box">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                <h2>GAME LOG</h2>
+                <h2>GAME STAT</h2>
             </div>
         </div>
         <div style="float:left">
             <table>
                 <div>
                     <div>
-                        <p1>TEAM_A</p1>
+                        <p1>{{MatchStats.match.team1.name}}</p1>
                         <thead>
                             <tr>
                                 <th>守門員</th>
@@ -297,7 +297,7 @@
             <table>
                 <div>
                     <div>
-                        <p1>TEAM_B</p1>
+                        <p1>{{MatchStats.match.team2.name}}</p1>
                         <thead>
                             <tr>
                                 <th>守門員</th>
@@ -350,7 +350,7 @@
             <div class="row animate-box">
                 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
                     <h2>Live Broadcast</h2>
-                    <p>Renew Time </p>
+                    <p>Renew Time : {{ nowtimes }}</p>
                 </div>
             </div>
             <div>
@@ -361,12 +361,7 @@
                 </div>
                 {% endfor %}
             </div>
-            <div id="send-box">
-                <form id="send-form" action="." method="POST">{% csrf_token %}
-                    <input type="text" name="msg" id="msg" placeholder="說點什麼？">
-                    <input type="submit" id="submit" value="送出">
-                </form>
-            </div>
+
         </div>
     </div>
     <footer id="fh5co-footer" role="contentinfo">
