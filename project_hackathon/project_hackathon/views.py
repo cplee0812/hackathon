@@ -10,6 +10,7 @@ from django.conf.urls.static import static
 from django.template import RequestContext
 from football.models import Team, Player, Match, MatchStat
 from sendemail.models import ContactForm
+from football.forms import DocumentForm
 
 def homepage(request):
 
@@ -57,20 +58,20 @@ def gamepage(request):
 
 def teampage(request):
 
-	class NewTeam(forms.ModelForm):
-		class Meta:
-			model = Team
-			fields = '__all__'
+#	class NewTeam(forms.ModelForm):
+#		class Meta:
+#			model = Team
+#			fields = '__all__'
 
 	if request.method == 'POST':
-		form = NewTeam(request.POST)
+		form = DocumentForm(request.POST, request.FILES)
 		if form.is_valid():
 			form.save()
-			return redirect('/teampage/')
+			return render(request, 'success.html', locals())
 	#		return render(request,'create.html',locals())
 	else:
-		form = NewTeam()
-		return render(request, 'teampage.html', locals())
+		form = DocumentForm()
+	return render(request, 'teampage.html', {'form':form})
 
 def personalpage(request):
 
