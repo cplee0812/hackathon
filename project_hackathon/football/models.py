@@ -1,3 +1,4 @@
+from __future__ import unicode_literals
 from django.db import models
 from django import forms
 from django_auto_one_to_one import AutoOneToOneModel
@@ -6,11 +7,15 @@ from django_auto_one_to_one import AutoOneToOneModel
 
 class Team(models.Model):
 	"""docstring for Player"""
-	name = models.CharField(max_length=20, blank=False)
-	contact = models.CharField(max_length=20, blank=False, default=None)
+	team_name = models.CharField(max_length=20, blank=False)
+	jersey_color = models.CharField(max_length=20, blank=False, default=None)
+	player_number = models.IntegerField(blank=False, default=None)
+	#description = models.CharField(max_length=255, blank=False, default=None)
+	document = models.FileField(upload_to='documents/',null=True)
+	uploaded_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
 
 	def __str__(self):
-		return self.name
+		return self.team_name
 
 class Player(models.Model):
 	"""docstring for Player"""
