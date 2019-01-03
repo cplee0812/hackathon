@@ -83,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'csxhackathon',
         'USER': 'helloworld',
-        'PASSWORD': '',
+        'PASSWORD': '1',
         'HOST': '',
         'PORT': '',
     }
