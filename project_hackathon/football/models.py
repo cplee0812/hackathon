@@ -11,7 +11,7 @@ class Team(models.Model):
 	jersey_color = models.CharField(max_length=20, blank=False, default=None)
 	player_number = models.IntegerField(blank=False, default=00)
 	#description = models.CharField(max_length=255, blank=False, default=None)
-	document = models.FileField(upload_to='documents/',null=True)
+	jersey_image = models.FileField(upload_to='documents/',null=True)
 	uploaded_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
 
 	def __str__(self):
