@@ -126,7 +126,7 @@ def create(request):
 		form = NewMatch(request.POST)
 		if form.is_valid():
 			form.save()
-			return redirect('/create/')
+			return redirect('/football_page/')
 	#		return render(request,'create.html',locals())
 	else:
 		form = NewMatch()

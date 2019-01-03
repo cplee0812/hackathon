@@ -44,9 +44,9 @@
                                 {% for match in Matches %}
                                 <td>{{ match.id}} </td>
                                 <td>{{ match.name }}</td>
-                                <td>{{ match.team1.name }}</td>
+                                <td>{{ match.team1.team_name }}</td>
                                 <td>v.s.</td>
-                                <td>{{ match.team2.name}}</td>
+                                <td>{{ match.team2.team_name}}</td>
                                 <td><a href="/fb_gamepage/{{match.id}}">Game Stats {{match.id}}</a></td>
                                 <br>
                                 <!--
