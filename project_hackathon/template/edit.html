@@ -27,39 +27,7 @@
     <br>
 
     <a href="away_score_plus1/{{MatchStats.id}}">Away PLus 1</a>
-    <div class="container">
-        <div>
-            <div>
-                <h2>Live Broadcast</h2>
-                <p>Renew Time : {{ nowtimes }}</p>
-            </div>
-        </div>
-        <div>
-            {% for msg in msgs %}
-            <div class='msg'>
-                <span>{{ msg.happened_time }}</span> {{ msg.message }}
 
-            </div>
-            {% endfor %}
-        </div>
-        <div>
-            <form method="POST" action="update_msg/{{ MatchStats.id }}">
-                {% csrf_token %}
-                <div class="form-group">
-                    <label for="firstname">Happened Time</label>
-                    <input type="time" name="time" step="2" required="required" />
-                </div>
-                <div class="form-group">
-                    <label for="firstname">What Happened</label>
-                    <input type="text" name="msg" required="required" />
-                </div>
-                <div class="form-group">
-                    <button type="submit" name="broadcasmsg" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-edit"></span> Update</button>
-                </div>
-            </form>
-        </div>
-
-    </div>
 </body>
 
 </html>

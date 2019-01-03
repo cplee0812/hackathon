@@ -43,7 +43,11 @@ urlpatterns = [
     path('success/',views.email),
     path('check/', views.check),
     url(r'edit/(?P<id>\d+)$', fb_views.edit, name='edit'),
+    url(r'edit_msg/(?P<id>\d+)$', fb_views.edit_msg, name='edit_msg'),
     url(r'^edit/update/(?P<id>\d+)$', fb_views.update, name='update'),
+    #url(r'^edit/update_msg/(?P<id>\d+)$', fb_views.update_msg, name='update_msg'),#
+    path('edit_msg/<int:id>/', fb_views.edit_msg, name='edit_msg' ),
+    path('edit_msg/update_msg/<int:id>/', fb_views.edit_msg, name='update_msg' ),
     url(r'^edit/host_score_plus1/(?P<id>\d+)$', fb_views.host_score_plus1, name='host_score_plus1'),
     url(r'^edit/away_score_plus1/(?P<id>\d+)$', fb_views.away_score_plus1, name='away_score_plus1'),
 ]

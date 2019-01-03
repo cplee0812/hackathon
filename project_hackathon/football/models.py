@@ -9,7 +9,7 @@ class Team(models.Model):
 	"""docstring for Player"""
 	team_name = models.CharField(max_length=20, blank=False)
 	jersey_color = models.CharField(max_length=20, blank=False, default=None)
-	player_number = models.IntegerField(blank=False, default=None)
+	player_number = models.IntegerField(blank=False, default=00)
 	#description = models.CharField(max_length=255, blank=False, default=None)
 	document = models.FileField(upload_to='documents/',null=True)
 	uploaded_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
@@ -72,10 +72,10 @@ class MatchStat(AutoOneToOneModel(Match)):
 	host_score = models.IntegerField(blank=True, default=0)
 	away_score = models.IntegerField(blank=True, default=0)
 
-class broadcast_msg(AutoOneToOneModel(Match)):
+class broadcast_msg(models.Model):
 
 	match = models.ForeignKey(Match, on_delete = models.PROTECT)
-	happened_time = models.TimeField(blank=False, default='00:00:00')
+	happened_time = models.CharField(max_length=20, blank=False, help_text="Format:'MM:SS'", default='00:00')
 	message = models.CharField(max_length=40, blank=True)
 
 	def __str__(self):
